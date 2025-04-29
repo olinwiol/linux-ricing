@@ -1,9 +1,20 @@
+# Wofi Config
+
+# Appearance
 style=style.css
-show=drun
-allow_markup=true
-allow_images=false
-width=30%
-height=40%
+width=40%
+height=30%
 location=center
 hide_scroll=true
-gtk_dark=false
+gtk_dark=true
+allow_markup=true
+matching=fuzzy
+insensitive=true
+
+# Terminal app to run commands
+term=alacritty
+
+# Behavior
+normal_window=false
+dynamic_lines=true
+single_click=true
