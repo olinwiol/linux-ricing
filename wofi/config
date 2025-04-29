@@ -1,12 +1,10 @@
-# Wofi Config
-
 # Appearance
 style=style.css
-width=40%
-height=30%
+width=50%
+height=40%
 location=center
 hide_scroll=true
-gtk_dark=true
+gtk_dark=false
 allow_markup=true
 matching=fuzzy
 insensitive=true
