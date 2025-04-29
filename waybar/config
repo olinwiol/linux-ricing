@@ -10,20 +10,13 @@
     "cpu",
     "memory",
     "disk",
-    "disk#2",
-    "custom/media"
+    "custom/audio"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/updates",
-    "tray",
-    "custom/mesh",
-    "custom/radiobt",
-    "bluetooth",
     "backlight",
-    "pulseaudio",
     "temperature",
     "battery",
     "clock"
@@ -32,13 +25,13 @@
     "icon-size": 16,
     "spacing": 20
   },
-  "bluetooth": {
-    "format": "",
-    "format-connected": "()",
-    "tooltip-format": "{controller_alias}\t{controller_address}",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "sh -c '(blueman-manager)' & disown"
+  "custom/audio": {
+    "format": " {}%",
+    "exec": "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'",
+    "interval": 5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
   },
   "network": {
     "format-wifi": "",
@@ -58,15 +51,8 @@
   },
   "disk": {
     "interval": 30,
-    "format": "ROOT 󰋊 {percentage_used}%",
+    "format": " 󰋊 {percentage_used}%",
     "path": "/",
-    "tooltip": true,
-    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)"
-  },
-  "disk#2": {
-    "interval": 30,
-    "format": "HOME 󰋊 {percentage_used}%",
-    "path": "/home/mike/",
     "tooltip": true,
     "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)"
   },
@@ -134,28 +120,6 @@
       "󰂂",
       "󰁹"
     ]
-  },
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "",
-    "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol",
-    "on-scroll-up": "pamixer -i 5",
-    "on-scroll-down": "pamixer -d 5",
-    "scroll-step": 5,
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    }
   },
   "temperature": {
     "thermal-zone": 6,
