@@ -1,8 +1,0 @@
-[Unit]
-Description=check-battery
-
-[Service]
-ExecStart=/home/mike/.config/systemd/user/check-battery.sh
-
-[Install]
-WantedBy=default.target
