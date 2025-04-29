@@ -1,25 +1,26 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 31,
+  "height": 62,
   "margin-top": 5,
   "margin-left": 10,
   "margin-right": 10,
   "margin-bot": 5,
   "modules-left": [
-    "cpu",
     "memory",
     "disk",
-    "custom/audio"
+    "custom/audio",
+    "hyprland/workspaces",
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "cpu",
+    "clock",
+    "battery"
   ],
   "modules-right": [
+    "network",
     "backlight",
-    "temperature",
-    "battery",
-    "clock"
+    "temperature"
   ],
   "tray": {
     "icon-size": 16,
@@ -28,18 +29,12 @@
   "custom/audio": {
     "format": " {}%",
     "exec": "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'",
-    "interval": 5,
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
   },
   "network": {
     "format-wifi": "",
     "format-disconnected": "󱚼",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50,
-    "on-click": "sh -c '(nm-connection-editor)' & disown"
   },
   "hyprland/window": {
     "format": "({class})"
@@ -71,18 +66,13 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "all-outputs": false,
-    "on-click": "activate",
-    "format-icons": {
-      "1": "󰣇",
-      "2": ""
-    },
     "sort-by-number": true
   },
   "clock": {
     "format": "{:%I:%M} ",
     "tooltip": true,
-    "locale": "it_IT.UTF-8",
-    "timezone": "Europe/Rome",
+    "locale": "sv_SE.UTF-8",
+    "timezone": "Europe/Stockholm",
     "tooltip-format": "{:%A, %e %B %Y}"
   },
   "backlight": {
@@ -93,9 +83,6 @@
       "󰃟",
       "󰃠"
     ],
-    "on-scroll-up": "brightnessctl set 5%+",
-    "on-scroll-down": "brightnessctl set 5%-",
-    "min-length": 6
   },
   "battery": {
     "states": {
