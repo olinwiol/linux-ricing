@@ -20,12 +20,6 @@
 	  "resolution",
 	  "terminal",
 	  "shell"
-	],
-	"display": {
-	  "separator": " ",
-	  "spacing": 1,
-	  "keyColor": "blue",
-	  "valueColor": "white"
-	}
+	]
   }
   
