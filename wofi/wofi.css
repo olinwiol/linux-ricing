@@ -1,29 +1,30 @@
-@define-color base           #1E1E2E ;
-@define-color blue_border    #2C9FB5 ;
-@define-color primary_yellow #ffb347 ;
-@define-color base_alt       #282f3e ;
-@define-color primary_blue   #b6c0cd ;
-/* 
-*{
-    font-family: "JetBrainsMono Nerd Font";
+@define-color base           #1E1E2E;
+@define-color blue_border    #2C9FB5;
+@define-color primary_yellow #ffb347;
+@define-color base_alt       #282f3e;
+@define-color primary_blue   #b6c0cd;
+
+/* General Styles for Fonts */
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 14px;
     font-weight: 700;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
- 
+
+/* General window background */
 window {
+    background-color: @base;
+    color: @primary_blue;
     border: 1px solid @primary_yellow;
     border-radius: 10px;
+    padding: 10px;
 }
- 
-#input {
-    margin-bottom: 15px;
-    padding:3px;
-    border: none;
-    color: @primary_blue;
-}
- 
+
+/* Outer box styling (container for the menu) */
 #outer-box {
-    margin: 5px;
     padding: 10px;
     background-color: @base;
     border-radius: 15px;
@@ -31,73 +32,41 @@ window {
     justify-content: center;
     align-items: center;
 }
- 
-#text {
-    padding: 5px;
-    color: @primary_blue;
-}
- 
- 
-#entry:nth-child(even) {
-    background-color: @base;
-}
- 
-#entry:selected {
-    background-color: @base_alt;
-} */
 
-
-
-* {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
-    font-weight: 700;
-}
-
-#window {
-    background-color: @base;
-    color: @primary_blue;
-    border: 1px solid @primary_yellow;
-    border-radius: 10px;
-}
-
-#outer-box {
-    padding: 20px;
-}
-
+/* Input Field (search bar) */
 #input {
     background-color: @base_alt;
-    border: 0px solid @blue_border;
+    color: @primary_blue;
+    border: 1px solid @blue_border;
+    border-radius: 4px;
     padding: 8px 12px;
+    width: 100%; /* Ensures full-width input */
+    margin-bottom: 15px;
 }
 
-#scroll {
-    margin-top: 20px;
-}
-
-#img {
-    padding-right: 8px;
-    padding-left: 12px;
-}
-
+/* Text Color for Menu Items */
 #text {
     color: @primary_blue;
 }
 
-#text:selected {
-    color: @base;
+/* Entry Styling (Menu items) */
+.entry {
+    padding: 6px 10px;
+    background-color: @base;
+    border-radius: 4px;
+    margin: 2px 0;
 }
 
-#entry {
-    padding: 6px;
-}
-
-#entry:selected {
+/* Entry Item on Hover or Active */
+.entry:hover, .entry:active {
     background-color: @blue_border;
     color: @base;
 }
 
-#input,
-#entry:selected {
-    border-radius: 4px;
+/* Selected Entry Item Styling */
+.entry:selected {
+    background-color: @blue_border;
+    color: @base;
 }
+
+/* No need for webkit-specific scrollbar styling */
