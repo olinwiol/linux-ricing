@@ -32,25 +32,6 @@
     "icon-size": 16,
     "spacing": 20
   },
-  "custom/media": {
-    "exec": "/usr/bin/python3 /home/mike/.config/waybar/scripts/mediaplayer.py --player spotify",
-    "format": "{} ",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "escape": true
-  },
-  "custom/radiobt": {
-    "on-click": "sh -c ~/.config/waybar/scripts/radiobt.sh",
-    "tooltip-format": "Radio on Bluetooth connection (Toggle)",
-    "format": "{} ",
-    "escape": true
-  },
-  "custom/mesh": {
-    "on-click": "sh -c '~/.config/waybar/scripts/mesh.sh menu'",
-    "tooltip-format": "Manage NordVPN",
-    "format": "{} 󰖂",
-    "escape": true
-  },
   "bluetooth": {
     "format": "",
     "format-connected": "()",
@@ -73,37 +54,31 @@
   "cpu": {
     "interval": 10,
     "format": "  {usage}%",
-    "max-length": 10,
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    "max-length": 10
   },
   "disk": {
     "interval": 30,
     "format": "ROOT 󰋊 {percentage_used}%",
     "path": "/",
     "tooltip": true,
-    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)"
   },
   "disk#2": {
     "interval": 30,
     "format": "HOME 󰋊 {percentage_used}%",
     "path": "/home/mike/",
     "tooltip": true,
-    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)"
   },
   "memory": {
     "interval": 30,
     "format": " {}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "Memory - {used:0.1f}GB used",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    "tooltip-format": "Memory - {used:0.1f}GB used"
   },
   "custom/updates": {
     "format": "{}",
-    "exec": "~/.config/waybar/scripts/update-sys.sh",
-    "on-click": "~/.config/waybar/scripts/update-sys.sh update",
     "interval": 300,
     "tooltip": true
   },
