@@ -2,7 +2,12 @@
 	"logo": {
 	  "type": "file",
 	  "source": "~/.config/fastfetch/logo.txt",
-	  "padding": 2
+	  "padding": {
+		"top": 0,
+		"right": 2,
+		"bottom": 0,
+		"left": 0
+	  }
 	},
 	"modules": [
 	  "os",
