@@ -1,8 +1,8 @@
-@define-color base           #1E1E2E;
-@define-color blue_border    #2C9FB5;
-@define-color primary_yellow #ffb347;
-@define-color base_alt       #282f3e;
-@define-color primary_blue   #b6c0cd;
+@define-color base           #1E1E2E;          /* Dark background */
+@define-color blue_border    #2C9FB5;          /* Accent blue */
+@define-color primary_yellow #ffb347;          /* Highlight color */
+@define-color base_alt       #282f3e;          /* Slightly darker background */
+@define-color primary_blue   #b6c0cd;          /* Light blue for text */
 
 /* General Styles for Fonts */
 * {
@@ -20,17 +20,21 @@ window {
     color: @primary_blue;
     border: 1px solid @primary_yellow;
     border-radius: 10px;
-    padding: 10px;
+    padding: 0; /* Remove any default padding */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
 }
 
-/* Outer box styling (container for the menu) */
+/* Outer box for the window */
 #outer-box {
+    flex-grow: 1; /* Ensure it takes up most of the space */
     padding: 10px;
     background-color: @base;
     border-radius: 15px;
+    overflow-y: auto; /* Enable scrolling if needed */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end; /* Align the input field at the bottom */
 }
 
 /* Input Field (search bar) */
@@ -40,13 +44,17 @@ window {
     border: 1px solid @blue_border;
     border-radius: 4px;
     padding: 8px 12px;
-    width: 100%; /* Ensures full-width input */
-    margin-bottom: 15px;
+    width: 100%; /* Ensure the input field stretches across */
+    margin-top: 10px; /* Add spacing above the input */
+    text-align: left; /* Align text to the left */
 }
 
-/* Text Color for Menu Items */
-#text {
-    color: @primary_blue;
+/* Modify input field placeholder to show the ">" symbol */
+#input::before {
+    content: ">";
+    margin-right: 5px;
+    color: @primary_yellow; /* Color the ">" symbol */
+    font-weight: bold;
 }
 
 /* Entry Styling (Menu items) */
@@ -69,4 +77,17 @@ window {
     color: @base;
 }
 
-/* No need for webkit-specific scrollbar styling */
+/* Remove the magnifying glass icon (if it exists) */
+#search-icon {
+    display: none;
+}
+
+/* Ensure that the prompt text appears as the ">" symbol at the beginning of the input */
+#input {
+    padding-left: 20px; /* Make room for the ">" symbol */
+}
+
+/* Scrollable Area (for the list of options) */
+#scroll {
+    margin-top: 10px;
+}
