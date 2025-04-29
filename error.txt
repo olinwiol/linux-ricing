@@ -1,0 +1,10 @@
+[2025-04-29 18:13:24.421] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable
+[2025-04-29 18:13:24.421] [info] Using CSS file /home/olin/.config/waybar/style.css
+[2025-04-29 18:13:24.432] [info] Hyprland IPC starting
+[2025-04-29 18:13:24.433] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-04-29 18:13:24.436] [warning] no bluetooth controller found
+sh: rad 1: /home/olin/.config/waybar/scripts/update-sys.sh: Åtkomst nekas
+[2025-04-29 18:13:24.442] [warning] module clock: Disabling module "clock", locale::facet::_S_create_c_locale name not valid
+/usr/bin/python3: can't open file '/home/mike/.config/waybar/scripts/mediaplayer.py': [Errno 2] No such file or directory
+[2025-04-29 18:13:24.454] [error] media stopped unexpectedly, is it endless?
+[olin@archlinux ~]$ [2025-04-29 18:13:24.587] [info] Bar configured (width: 2860, height: 31) for output: eDP-1
