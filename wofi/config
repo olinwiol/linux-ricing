@@ -1,3 +1,4 @@
 show=drun
 mode=run
 insensitive=true
+style=/home/olin/.config/wofi/wofi.css
