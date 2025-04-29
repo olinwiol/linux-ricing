@@ -6,7 +6,7 @@
     min-height: 0;
 }
 window#waybar {
-    background: rgba(30,30,46,0.8) #1E1E2E, ;
+    background: rgba(30,30,46,0.8);
     color: #cdd6f4;
     border-width: 2px;
     border-color: #33ccff; /* #595959 grigino */
