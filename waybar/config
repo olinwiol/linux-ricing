@@ -1,0 +1,7 @@
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": ["sway/workspaces", "clock"],
+	"modules-center": [],
+	"modules-right": ["network", "battery", "cpu", "memory"]
+}

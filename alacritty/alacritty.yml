@@ -1,0 +1,2 @@
+window:
+  opacity: 0.85 # 1.0 is opaque, 0.0 is invisible 
