@@ -1,18 +1,3 @@
-# Appearance
-style=style.css
-width=50%
-height=40%
-location=center
-hide_scroll=true
-gtk_dark=false
-allow_markup=true
-matching=fuzzy
+show=drun
+mode=run
 insensitive=true
-
-# Terminal app to run commands
-term=alacritty
-
-# Behavior
-normal_window=false
-dynamic_lines=true
-single_click=true
